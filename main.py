@@ -19,6 +19,8 @@ if __name__ == '__main__':
 	
 	print graph.listaDeNodos[0].getPeso(graph.listaDeNodos[1])
 	print graph.listaDeNodos[0].getContadorIdadeLink(graph.listaDeNodos[1])
+	graph.listaDeNodos[0].desativaLink(graph.listaDeNodos[1])
+	print graph.listaDeNodos[0].getPeso(graph.listaDeNodos[1])
 	# graph.criaAresta(0,1,10) #porto com floripa
 	# graph.criaAresta(0,2,10) #porto com curitiba
 	# graph.criaAresta(2,3,10) #curitiba com sao paulo
