@@ -2,16 +2,14 @@ class Nodos:
 	def __init__(self,nome):
 		self.nome = nome
 		self.conectadoCom = {}
-		self.distanciaDoNodoInicial = 1000000
+		self.contadorIdadeVizinho = {}
 
 	def adicionaVizinhos(self,vizinho,peso=0,contadorIdade=0):
-		self.conectadoCom[vizinho] = {peso : contadorIdade}
+		self.conectadoCom[vizinho] = peso 
+		self.contadorIdadeVizinho[vizinho] = contadorIdade
 
-	def removeVizinho(self,a):
-		self.conectadoCom.pop(a)
-
-	def setDistanciaDoNodoInicial(self,distancia):
-		self.distanciaDoNodoInicial = distancia
+	def getContadorIdadeLink(self,vizinho):
+		return self.contadorIdadeVizinho[vizinho]
 
 	def getConexoes(self):
 		return self.conectadoCom.keys()
@@ -21,6 +19,3 @@ class Nodos:
 
 	def getPeso(self,vizinho):
 		return self.conectadoCom[vizinho]
-
-	def getDistanciaDoNodoInicial(self):
-		return self.distanciaDoNodoInicial
