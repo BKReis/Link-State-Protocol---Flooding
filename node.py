@@ -4,8 +4,8 @@ class Nodos:
 		self.conectadoCom = {}
 		self.distanciaDoNodoInicial = 1000000
 
-	def adicionaVizinhos(self,vizinho,peso=0):
-		self.conectadoCom[vizinho] = peso
+	def adicionaVizinhos(self,vizinho,peso=0,contadorIdade=0):
+		self.conectadoCom[vizinho] = {peso : contadorIdade}
 
 	def removeVizinho(self,a):
 		self.conectadoCom.pop(a)
