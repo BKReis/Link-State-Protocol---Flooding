@@ -61,6 +61,31 @@ if __name__ == '__main__':
 	graph.criaAresta(10,23,1) #brasilia com manaus
 	graph.criaAresta(23,24,1) #manaus com boa vista
 
+	graph.inicializaDicionariosTopografias()
+	while graph.convergiu() != True:
+		listMsg = []
+
+		for i in graph.listaDeNodos.values():
+			a = i.getQuants()
+			print "Nodo", i.getNome()
+			print "Arestas conhecidas:", a[0]
+			print "Arestas desconhecidas:", a[1]
+			for i in graph.listaDeNodos.values():
+				for j in i.getConexoes():
+					for x in graph.listaDeArestas.values():
+						if i.topografiaAtualiza[x.getCodigo()] == True:
+							mensagem = Mensagens(i, j, x.getCodigo(), x.getPeso())
+							listMsg.append(mensagem)
+
+							for x in listMsg:
+								x.enviaMensagem()
+
+								for i in graph.listaDeNodos.values():
+									a = i.getQuants()
+									print "Nodo", i.getNome()
+									print "Arestas conhecidas:", a[0]
+									print "Arestas desconhecidas:", a[1]
+
 	# receive arguments from command line
 	# if len(sys.argv) == 4:
 	# 	k = int(sys.argv[1])
@@ -86,28 +111,3 @@ if __name__ == '__main__':
 	# 		print "Argumento 2 e 3 de entrada deve ter valores de 0 a 27"
 	# else:
 	# 	print "Enter the correct number of arguments!!"
-
-	graph.inicializaDicionariosTopografias()
-	while graph.convergiu() != True:
-		listMsg = []
-
-		for i in graph.listaDeNodos.values():
-			a = i.getQuants()
-			print "Nodo", i.getNome()
-			print "Arestas conhecidas:", a[0]
-			print "Arestas desconhecidas:", a[1]
-			for i in graph.listaDeNodos.values():
-				for j in i.getConexoes():
-					for x in graph.listaDeArestas.values():
-						if i.topografiaAtualiza[x.getCodigo()] == True:
-							mensagem = Mensagens(i, j, x.getCodigo(), x.getPeso())
-							listMsg.append(mensagem)
-
-		for x in listMsg:
-			x.enviaMensagem()
-
-	for i in graph.listaDeNodos.values():
-		a = i.getQuants()
-		print "Nodo", i.getNome()
-		print "Arestas conhecidas:", a[0]
-		print "Arestas desconhecidas:", a[1]
