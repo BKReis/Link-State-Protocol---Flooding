@@ -11,8 +11,9 @@ class Nodos:
 		self.topografiaAtualiza = {}
 
 	def atualizaTopografia(self,codigoAresta,Distancia):
-		self.topografiaDistancia[codigoAresta] = Distancia
-		self.topografiaAtualiza[codigoAresta] = True
+		if not self.topografiaAtualiza[codigoAresta]:
+			self.topografiaDistancia[codigoAresta] = Distancia
+			self.topografiaAtualiza[codigoAresta] = True
 
 	def adicionaVizinhos(self,vizinho,codigoAresta,peso=0,contadorSequencia=1):
 		self.conectadoCom[vizinho] = peso
@@ -31,3 +32,14 @@ class Nodos:
 
 	def getPeso(self,vizinho):
 		return self.conectadoCom[vizinho]
+
+	def getQuants(self):
+		conhecidos = 0
+		desconhecidos = 0
+		for i in self.topografiaAtualiza.values():
+			if i == True:
+				conhecidos = conhecidos + 1
+			else:
+				desconhecidos = desconhecidos + 1
+
+		return (conhecidos, desconhecidos)

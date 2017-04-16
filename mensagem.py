@@ -3,9 +3,9 @@ class Mensagens:
 		self.nodoFonte = nodoFonte
 		self.nodoDestino = nodoDestino
 		self.codigoAresta = codigoAresta
-		self.distancia = distancia 
-		
+		self.distancia = distancia
+
 		#self.contadorSequencia = nodoFonte.getContadorSequencia(nodoDestino)
 
-	def enviaMensagem(self,nodoDestino):
-		nodoDestino.atualizaTopografia(self.codigoAresta,self.distancia)
+	def enviaMensagem(self):
+		self.nodoDestino.atualizaTopografia(self.codigoAresta,self.distancia)
