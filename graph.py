@@ -1,5 +1,5 @@
 from node import *
-from aresta import *
+from arestas import *
 class Grafo:
     def __init__(self):
         self.listaDeNodos = {}
@@ -15,12 +15,20 @@ class Grafo:
 
         return novoNodo
 
+    def inicializaDicionariosTopografias(self):
+        for i in listaDeNodos:
+            for j in range(self.numeroDeArestas-1):
+                if j not in i.topografiaAtualiza:
+                    i.topografiaAtualiza[j] = False
+
+
+
     def criaAresta(self, a, b, peso=0):
-        #Adiciona nas vizinhanças dos nodos
+        #Adiciona nas vizinhancas dos nodos
         self.listaDeNodos[a].adicionaVizinhos(self.listaDeNodos[b], peso)
         self.listaDeNodos[b].adicionaVizinhos(self.listaDeNodos[a], peso)
         #Instancia as Arestas
-        self.numeroDeArestas = self.numeroDeAresta + 1
+        self.numeroDeArestas = self.numeroDeArestas + 1
         novaAresta = Arestas(a,b,peso,self.codigoAresta)
         self.listaDeArestas[self.codigoAresta] = novaAresta
         self.codigoAresta = self.codigoAresta + 1
