@@ -77,14 +77,14 @@ if __name__ == '__main__':
 							mensagem = Mensagens(i, j, x.getCodigo(), x.getPeso())
 							listMsg.append(mensagem)
 
-							for x in listMsg:
-								x.enviaMensagem()
+		for x in listMsg:
+			x.enviaMensagem()
 
-								for i in graph.listaDeNodos.values():
-									a = i.getQuants()
-									print "Nodo", i.getNome()
-									print "Arestas conhecidas:", a[0]
-									print "Arestas desconhecidas:", a[1]
+	for i in graph.listaDeNodos.values():
+		a = i.getQuants()
+		print "Nodo", i.getNome()
+		print "Arestas conhecidas:", a[0]
+		print "Arestas desconhecidas:", a[1]
 
 	# receive arguments from command line
 	# if len(sys.argv) == 4:
