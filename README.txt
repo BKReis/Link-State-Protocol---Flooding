@@ -41,3 +41,16 @@ Tabela de numeros com a correspondente localização na rede ipe:
 26: Rio Branco
 27: Teresina
 
+Alterações em  relação ao Link State  contido no livro
+
+Basicamente, como  no  requisito  do trabalho  nos  foi informado que   não  era necessário a   implementação de  um algoritmo
+que levasse em consideração a queda de arestas, de nodos no grafo,  de alterações de peso, bem como a inserção de novos nodos,
+descartamos   a inclusão do sequence counter e do aging na implementação das mensagens de nosso flooding, visto que como os pe-
+sos serão sempre fixos e os nodos e arestas sempre  presentes, e não haverão  mensagens referentes  à mesma aresta com informa-
+ções discrepantes, julgamos que ambos são irrelevantes em nossa implementação e os removemos. No flooding o  algoritmo verifica
+se uma mensagem referente a uma aresta já foi recebida pelo nó, em caso positivo, o nó não recebe a mesma mensagem  novamente,
+como forma de otimização do código
+
+Quanto as mensagens, criamos um laço que percorria cada nó adicionando informações referentes a cada aresta a uma lista de men-
+sagemsagens para posteriormente serem enviadas após percorridos todos os nós. Esse procedimento se repetia até que as tabelas
+convergissem.
