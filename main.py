@@ -139,6 +139,8 @@ if __name__ == '__main__':
 for key,value in graph.listaDeNodos[0].topografiaDistancia.iteritems():
 	graph.listaDeArestas[key] = value
 
+print("\nFim da convergencia das tabelas")
+print("\nAplicando Dijkstra")
 initialNodeNumber = int(raw_input("Forneca o numero(0 a 27) do no inicial:"))
 destinationNodeNumber = int(raw_input("Forneca o numero(0 a 27) do no destino:"))
 
