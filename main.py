@@ -139,10 +139,10 @@ if __name__ == '__main__':
 for key,value in graph.listaDeNodos[0].topografiaDistancia.iteritems():
 	graph.listaDeArestas[key] = value
 
-initialNodeNumber = int(raw_input("Forneca o numero do no inicial:"))
-destinationNodeNumber = int(raw_input("Forneca o numero do no destino:"))
+initialNodeNumber = int(raw_input("Forneca o numero(0 a 27) do no inicial:"))
+destinationNodeNumber = int(raw_input("Forneca o numero(0 a 27) do no destino:"))
 
-if initialNodeNumber>=0 and destinationNodeNumber<28:
+if initialNodeNumber>=0 and initialNodeNumber<28 and destinationNodeNumber<28 and destinationNodeNumber>=0:
 	dijkstra = Dijkstra(graph, initialNodeNumber, destinationNodeNumber)
 	minimunPathAux = list(dijkstra.minimunPathList)
 	print "Shortest Path: " + str(numberToName(minimunPathAux))
