@@ -63,28 +63,12 @@ def numberToName(auxList):
 			auxList[x] = "Teresina"
 	return auxList
 
-
-
-
 if __name__ == '__main__':
-
-	# infinito = 999999
 
 	# graph declaration
 	graph = Grafo()
 	for i in range(28):
 		graph.adicionaNodo(i)
-
-	# graph = Grafo()
-
-	# for i in range(3):
-	# 	graph.adicionaNodo(i)
-	#
-	# graph.criaAresta(0,1,10)
-	# graph.criaAresta(1,2,20)
-
-	# print graph.listaDeNodos[0].getPeso(graph.listaDeNodos[1])
-	# print graph.listaDeNodos[0].getPeso(graph.listaDeNodos[1])
 
 	graph.criaAresta(0,1,10) #porto com floripa
 	graph.criaAresta(0,2,10) #porto com curitiba
@@ -152,9 +136,7 @@ if __name__ == '__main__':
 		print "Arestas desconhecidas:", a[1]
 
 
-
-
-for key,value in graph.listaDeNodos[0].topografiaDistancia:
+for key,value in graph.listaDeNodos[0].topografiaDistancia.iteritems():
 	graph.listaDeArestas[key] = value
 
 initialNodeNumber = int(raw_input("Forneca o numero do no inicial:"))
