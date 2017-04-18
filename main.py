@@ -1,6 +1,71 @@
 import sys
 from graph import *
 from mensagem import *
+from djikstra import *
+
+def numberToName(auxList):
+	for x, j in enumerate(auxList):
+		if j == 0:
+			auxList[x] = "PortoAlegre"
+		if j == 1:
+			auxList[x] = "Florianopolis"
+		if j == 2:
+			auxList[x] = "Curitiba"
+		if j == 3:
+			auxList[x] = "Sao Paulo"
+		if j == 4:
+			auxList[x] = "Rio de Janeiro"
+		if j == 5:
+			auxList[x] = "Vitoria"
+		if j == 6:
+			auxList[x] = "Campo Grande"
+		if j == 7:
+			auxList[x] = "Cuiaba"
+		if j == 8:
+			auxList[x] = "Belo Horizonte"
+		if j == 9:
+			auxList[x] = "Goiania"
+		if j == 10:
+			auxList[x] = "Brasilia"
+		if j == 11:
+			auxList[x] = "Salvador"
+		if j == 12:
+			auxList[x] = "Aracaju"
+		if j == 13:
+			auxList[x] = "Maceio"
+		if j == 14:
+			auxList[x] = "Recife"
+		if j == 15:
+			auxList[x] = "Joao Pessoa"
+		if j == 16:
+			auxList[x] = "Campina Grande"
+		if j == 17:
+			auxList[x] = "Natal"
+		if j == 18:
+			auxList[x] = "Fortaleza"
+		if j == 19:
+			auxList[x] = "Sao Luis"
+		if j == 20:
+			auxList[x] = "Belem"
+		if j == 21:
+			auxList[x] = "Palmas"
+		if j == 22:
+			auxList[x] = "Macapa"
+		if j == 23:
+			auxList[x] = "Manaus"
+		if j == 24:
+			auxList[x] = "Boa Vista"
+		if j == 25:
+			auxList[x] = "Porto Velho"
+		if j == 26:
+			auxList[x] = "Rio Branco"
+		if j == 27:
+			auxList[x] = "Teresina"
+	return auxList
+
+
+
+
 if __name__ == '__main__':
 
 	# infinito = 999999
@@ -86,28 +151,19 @@ if __name__ == '__main__':
 									print "Arestas conhecidas:", a[0]
 									print "Arestas desconhecidas:", a[1]
 
-	# receive arguments from command line
-	# if len(sys.argv) == 4:
-	# 	k = int(sys.argv[1])
-	# 	initial_node_number = int(sys.argv[2])
-	# 	dest_node_number = int(sys.argv[3])
-	# 	if initial_node_number>0 and dest_node_number<28:
-	# 		u = 0
-	# 		pathToSelf = False
-	# 		while u < k:
-	# 			if dest_node_number in graph.listaDeNodos:
-	# 				dijkstra = Dijkstra(graph, graph.listaDeNodos[initial_node_number].getNome(), graph.listaDeNodos[dest_node_number].getNome())
-	# 				if dijkstra.dictDistanciaDoNodoInicial[dest_node_number] < infinito and pathToSelf==False:
-	# 					print "Shortest Path "+str(u+1) +": "+ str(dijkstra.minimunPathList)
-	# 					print "Path Total Weight: "+str(dijkstra.dictDistanciaDoNodoInicial[dest_node_number])
-	# 					graph.deletaMenorAresta(dijkstra.minimunPathList)
-	# 					if dijkstra.dictDistanciaDoNodoInicial[dest_node_number] == 0:
-	# 						pathToSelf = True
-	# 				else:
-	# 						u = k
-	# 						print "All Possible Paths Found"
-	# 			u = u+1
-	# 	else:
-	# 		print "Argumento 2 e 3 de entrada deve ter valores de 0 a 27"
-	# else:
-	# 	print "Enter the correct number of arguments!!"
+
+
+
+for key,value in graph.listaDeNodos[0].topografiaDistancia:
+	graph.listaDeArestas[key] = value
+
+initialNodeNumber = int(raw_input("Forneca o numero do no inicial:"))
+destinationNodeNumber = int(raw_input("Forneca o numero do no destino:"))
+
+if initialNodeNumber>=0 and destinationNodeNumber<28:
+	dijkstra = Dijkstra(graph, initialNodeNumber, destinationNodeNumber)
+	minimunPathAux = list(dijkstra.minimunPathList)
+	print "Shortest Path: " + str(numberToName(minimunPathAux))
+	print "Path Total Weight: " + str(dijkstra.dictDistanciaDoNodoInicial[destinationNodeNumber])
+else:
+	print "Entrada deve ter valores de 0 a 27"
