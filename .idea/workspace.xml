@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd7bc6db-3c0c-4424-8010-9bc0e273189d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="Link-State-Protocol---Flooding.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
+            <state relative-caret-position="317">
+              <caret line="138" column="71" selection-start-line="138" selection-start-column="71" selection-end-line="138" selection-end-column="71" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -96,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -117,6 +117,7 @@
         <option value="$PROJECT_DIR$/graph.py" />
         <option value="$PROJECT_DIR$/graph_dijkstra.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -431,21 +432,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
+        <state relative-caret-position="317">
+          <caret line="138" column="71" selection-start-line="138" selection-start-column="71" selection-end-line="138" selection-end-column="71" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
