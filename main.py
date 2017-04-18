@@ -135,7 +135,7 @@ if __name__ == '__main__':
 		print "Arestas conhecidas:", a[0]
 		print "Arestas desconhecidas:", a[1]
 
-print("\nTabela convergida:")
+print("\nTabela Convergida:")
 for key,value in graph.listaDeNodos[0].topografiaDistancia.iteritems():
 	graph.listaDeArestas[key] = value
 	print("Chave: " + str(key) + " Valor: " + str(value))
